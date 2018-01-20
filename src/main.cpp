@@ -1,11 +1,20 @@
-#include <cstdio>
+#include <iostream>
 #include "Graph.hpp"
+#include "Interface.hpp"
+#include "LongBridges.hpp"
 
 using namespace aisdi;
 int main()
 {
-	Graph::size_type N = 5;
-	Graph graph(N);
-	graph.areConnected(0, 1);
+	
+	Graph graph(0);
+	Interface interface;
+	interface.readInputTo(graph);
+	
+	LongBridges finder;
+	
+	interface.printOutputFrom(finder.findLongBridges(graph));
+	
+	
 	return 0;
 }

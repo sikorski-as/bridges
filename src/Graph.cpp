@@ -21,6 +21,8 @@ namespace aisdi
 	{
 		if(areConnected(firstVertex, secondVertex))
 			throw std::logic_error("Attempt to add an edge that already exists in the graph.");
+		if(firstVertex == secondVertex)
+			throw std::logic_error("A vertex cannot be connected to itself.");
 		
 		neighbourList[firstVertex].push_back(secondVertex);	
 		neighbourList[secondVertex].push_back(firstVertex);	
